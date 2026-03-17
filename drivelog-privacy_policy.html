@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>차량 운행 일지 - 개인정보처리방침</title>
+  <style>
+    /* ── 기본 레이아웃 ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                   "Noto Sans KR", "Apple SD Gothic Neo", sans-serif;
+      background: #f5f7fa;
+      color: #1a1a2e;
+      line-height: 1.7;
+      padding: 24px 16px 60px;
+    }
+
+    .card {
+      max-width: 720px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(0,0,0,.08);
+      padding: 36px 32px;
+    }
+
+    /* ── 헤더 ── */
+    .app-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 28px;
+      padding-bottom: 20px;
+      border-bottom: 2px solid #eef0f5;
+    }
+    .app-icon {
+      width: 52px; height: 52px;
+      background: linear-gradient(135deg, #6c3fc5, #4a90d9);
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 26px; flex-shrink: 0;
+    }
+    .app-header h1 {
+      font-size: 20px; font-weight: 700; color: #1a1a2e;
+    }
+    .app-header p {
+      font-size: 13px; color: #7a7f8c; margin-top: 2px;
+    }
+
+    /* ── 배지 ── */
+    .badge-row {
+      display: flex; flex-wrap: wrap; gap: 8px;
+      margin-bottom: 24px;
+    }
+    .badge {
+      font-size: 12px; font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 20px;
+      background: #f0eaff; color: #6c3fc5;
+    }
+    .badge.green  { background: #e6f9f1; color: #2d9e6b; }
+    .badge.blue   { background: #e8f2ff; color: #2a6dd9; }
+
+    /* ── 인트로 박스 ── */
+    .intro-box {
+      background: linear-gradient(135deg, #f5f0ff, #eef5ff);
+      border-left: 4px solid #6c3fc5;
+      border-radius: 0 10px 10px 0;
+      padding: 14px 18px;
+      font-size: 14px;
+      color: #3a3a5c;
+      margin-bottom: 28px;
+    }
+
+    /* ── 섹션 ── */
+    .section { margin-bottom: 28px; }
+
+    .section-title {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 15px; font-weight: 700;
+      color: #6c3fc5;
+      margin-bottom: 12px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid #eef0f5;
+    }
+    .section-title .num {
+      width: 26px; height: 26px;
+      background: #6c3fc5; color: #fff;
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 12px; font-weight: 700; flex-shrink: 0;
+    }
+
+    p { font-size: 14px; color: #3a3a5c; margin-bottom: 8px; }
+
+    ul { list-style: none; padding: 0; }
+    ul li {
+      font-size: 14px; color: #3a3a5c;
+      padding: 5px 0 5px 20px;
+      position: relative;
+    }
+    ul li::before {
+      content: "•";
+      position: absolute; left: 6px;
+      color: #6c3fc5; font-weight: 700;
+    }
+
+    /* ── 강조 블록 ── */
+    .highlight-box {
+      background: #f0fdf7;
+      border: 1px solid #a7e5cb;
+      border-radius: 10px;
+      padding: 14px 18px;
+      font-size: 13px; color: #1e6b48;
+      margin-top: 10px;
+      line-height: 1.8;
+      text-align: center;
+    }
+    .highlight-box strong { display: block; margin-bottom: 4px; }
+
+    /* ── SMTP 경고 박스 ── */
+    .warn-box {
+      background: #fff8e6;
+      border: 1px solid #f5c842;
+      border-radius: 10px;
+      padding: 14px 18px;
+      font-size: 13px; color: #7a5c00;
+      margin-top: 10px;
+    }
+    .warn-box strong { color: #b07a00; }
+
+    /* ── 푸터 ── */
+    .footer {
+      margin-top: 36px;
+      padding-top: 20px;
+      border-top: 1px solid #eef0f5;
+      font-size: 12px; color: #9a9fb0;
+      text-align: center;
+      line-height: 1.8;
+    }
+
+    @media (max-width: 480px) {
+      .card { padding: 24px 18px; }
+      .app-header h1 { font-size: 17px; }
+    }
+  </style>
+</head>
+<body>
+<div class="card">
+
+  <!-- 헤더 -->
+  <div class="app-header">
+    <div class="app-icon">🚗</div>
+    <div>
+      <h1>차량 운행 일지</h1>
+      <p>개인정보처리방침 · Privacy Policy</p>
+    </div>
+  </div>
+
+  <!-- 배지 -->
+  <div class="badge-row">
+    <span class="badge">시행일: 2026년 1월 1일</span>
+    <span class="badge green">기기 내 저장만</span>
+    <span class="badge blue">외부 서버 미사용</span>
+  </div>
+
+  <!-- 인트로 -->
+  <div class="intro-box">
+    "차량 운행 일지" 앱(이하 "앱")은 사용자의 개인정보를 소중히 여기며,
+    개인정보 보호법 및 관련 법령에 따라 아래와 같이 개인정보처리방침을 운영합니다.
+  </div>
+
+  <!-- 1. 수집 정보 -->
+  <div class="section">
+    <div class="section-title"><span class="num">1</span>수집하는 정보</div>
+    <p>앱은 서비스 제공을 위해 다음 정보를 수집합니다:</p>
+    <ul>
+      <li>위치 정보 (GPS): 운행 출발지/도착지 좌표 및 이동 경로 기록</li>
+      <li>블루투스 기기 정보: 차량 연결 자동 감지를 위한 등록 기기 이름</li>
+      <li>이메일 주소: 운행 기록 Excel 파일 발송을 위해 사용자가 직접 입력</li>
+      <li>알림 설정: 리마인더 시간 등 앱 내 설정값</li>
+    </ul>
+  </div>
+
+  <!-- 2. 수집 목적 -->
+  <div class="section">
+    <div class="section-title"><span class="num">2</span>수집 목적</div>
+    <ul>
+      <li>차량 운행 기록 생성 및 관리</li>
+      <li>운행 경로·거리 자동 계산</li>
+      <li>차량 블루투스/OBD2 연결 자동 감지</li>
+      <li>운행 기록 이메일 발송</li>
+      <li>앱 사용 환경 설정 유지</li>
+    </ul>
+  </div>
+
+  <!-- 3. 보관 및 처리 -->
+  <div class="section">
+    <div class="section-title"><span class="num">3</span>정보의 보관 및 처리</div>
+    <ul>
+      <li>모든 데이터는 사용자의 기기 내부에만 저장됩니다.</li>
+      <li>외부 서버, 클라우드 또는 제3자에게 전송·저장되지 않습니다.</li>
+      <li>앱을 삭제하면 저장된 모든 데이터가 함께 삭제됩니다.</li>
+      <li>백업 파일은 사용자가 직접 선택한 기기 내 폴더에 저장됩니다.</li>
+    </ul>
+  </div>
+
+  <!-- 4. 제3자 제공 -->
+  <div class="section">
+    <div class="section-title"><span class="num">4</span>제3자 제공</div>
+    <p>
+      앱은 수집한 개인정보를 제3자에게 제공하지 않습니다.
+      단, 사용자가 직접 이메일 발송 기능을 사용할 경우
+      기기에 설치된 메일 앱 또는 사용자가 지정한 SMTP 서버를 통해
+      수신자에게 파일이 전달됩니다.
+    </p>
+    <div class="warn-box">
+      <strong>⚠️ SMTP 직접 발송 시 안내</strong>
+      사용자가 SMTP 서버를 직접 설정하여 이메일을 발송하는 경우,
+      해당 이메일 내용 및 첨부 파일(운행일지 엑셀)이 사용자가 지정한
+      외부 SMTP 서버로 전송됩니다.
+      이 경우의 데이터 처리는 해당 서버 운영자의 정책을 따릅니다.
+    </div>
+  </div>
+
+  <!-- 5. 위치 정보 이용 -->
+  <div class="section">
+    <div class="section-title"><span class="num">5</span>위치 정보 이용</div>
+    <ul>
+      <li>포그라운드 위치: 운행 시작/종료 시 현재 위치 확인</li>
+      <li>백그라운드 위치: 운행 중 경로 실시간 추적 및 거리 계산</li>
+      <li>위치 정보는 기기 내부에만 저장되며 외부로 전송되지 않습니다.</li>
+    </ul>
+    <div class="warn-box" style="margin-top:10px; background:#fff2f2; border-color:#f5a0a0; color:#8b2020;">
+      <strong>📍 백그라운드 위치 사용 목적</strong>
+      화면이 꺼지거나 앱이 최소화된 상태에서도 운행 중 거리·경로를 정확히
+      기록하기 위해 백그라운드 위치 권한이 사용됩니다.
+      수집된 위치 데이터는 기기 내부에만 저장되며 외부로 전송되지 않습니다.
+    </div>
+  </div>
+
+  <!-- 6. 블루투스 정보 이용 -->
+  <div class="section">
+    <div class="section-title"><span class="num">6</span>블루투스 정보 이용</div>
+    <ul>
+      <li>사용자가 직접 등록한 차량 블루투스 기기 이름만 저장합니다.</li>
+      <li>연결 감지 목적 외에는 사용되지 않습니다.</li>
+      <li>블루투스 MAC 주소 등 민감한 정보는 수집하지 않습니다.</li>
+    </ul>
+  </div>
+
+  <!-- 7. 사용자 권리 -->
+  <div class="section">
+    <div class="section-title"><span class="num">7</span>사용자 권리</div>
+    <ul>
+      <li>설정 &gt; 데이터 백업/복원 메뉴에서 데이터를 내보내거나 삭제할 수 있습니다.</li>
+      <li>설정 &gt; 운행 기록 전체 초기화로 모든 운행 기록을 삭제할 수 있습니다.</li>
+      <li>앱 삭제 시 기기에 저장된 모든 정보가 완전히 제거됩니다.</li>
+    </ul>
+  </div>
+
+  <!-- 8. 아동 보호 -->
+  <div class="section">
+    <div class="section-title"><span class="num">8</span>아동 개인정보 보호</div>
+    <p>
+      본 앱은 만 14세 미만 아동을 대상으로 하지 않으며,
+      아동의 개인정보를 의도적으로 수집하지 않습니다.
+    </p>
+  </div>
+
+  <!-- 9. 방침 변경 -->
+  <div class="section">
+    <div class="section-title"><span class="num">9</span>방침 변경 안내</div>
+    <p>
+      개인정보처리방침이 변경될 경우 앱 업데이트를 통해 변경 내용을 안내합니다.
+    </p>
+  </div>
+
+  <!-- 10. 문의 -->
+  <div class="section">
+    <div class="section-title"><span class="num">10</span>문의</div>
+    <p>
+      개인정보 관련 문의 사항은 Google Play 스토어 개발자 페이지를 통해
+      연락해 주십시오.
+    </p>
+  </div>
+
+  <!-- 요약 박스 -->
+  <div class="highlight-box">
+    <strong>📱 핵심 요약</strong>
+    본 앱은 수집한 개인정보를 기기 외부로 전송하지 않으며,<br>
+    모든 데이터는 사용자의 기기 내에서만 처리됩니다.<br>
+    (SMTP 직접 발송 기능 사용 시 사용자 지정 서버로만 전송)
+  </div>
+
+  <!-- 푸터 -->
+  <div class="footer">
+    차량 운행 일지 (Drive Log) &nbsp;·&nbsp; 시행일 2026. 01. 01<br>
+    본 방침은 Google Play 스토어 정책 및 대한민국 개인정보 보호법을 준수합니다.
+  </div>
+
+</div>
+</body>
+</html>
