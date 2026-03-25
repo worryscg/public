@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>개인정보 처리방침 - Battery Guardian</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans KR', sans-serif;
+      background: #0f0f0f;
+      color: #e0e0e0;
+      line-height: 1.8;
+      padding: 0;
+    }
+    .header {
+      background: linear-gradient(135deg, #1a1a1a 0%, #222 100%);
+      border-bottom: 2px solid #FFC107;
+      padding: 40px 24px 32px;
+      text-align: center;
+    }
+    .header-icon {
+      font-size: 48px;
+      margin-bottom: 12px;
+    }
+    .header h1 {
+      font-size: 26px;
+      font-weight: 700;
+      color: #FFC107;
+      letter-spacing: 0.5px;
+      margin-bottom: 6px;
+    }
+    .header .app-name {
+      font-size: 14px;
+      color: #888;
+    }
+    .header .updated {
+      font-size: 12px;
+      color: #666;
+      margin-top: 8px;
+    }
+    .container {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 32px 24px 60px;
+    }
+    .notice-box {
+      background: #1a2a1a;
+      border: 1px solid #2d5a2d;
+      border-left: 4px solid #4CAF50;
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin-bottom: 32px;
+      font-size: 13px;
+      color: #aaa;
+      line-height: 1.7;
+    }
+    .notice-box strong { color: #4CAF50; }
+    section {
+      margin-bottom: 36px;
+    }
+    .section-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: #FFC107;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #2a2a2a;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .section-num {
+      background: #FFC107;
+      color: #000;
+      font-size: 12px;
+      font-weight: 800;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    p { font-size: 14px; color: #bbb; margin-bottom: 10px; }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 10px;
+    }
+    ul li {
+      font-size: 14px;
+      color: #bbb;
+      padding: 5px 0 5px 16px;
+      position: relative;
+    }
+    ul li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: #FFC107;
+    }
+    .table-wrap { overflow-x: auto; margin: 12px 0; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+    th {
+      background: #1e1e1e;
+      color: #FFC107;
+      padding: 10px 14px;
+      text-align: left;
+      border: 1px solid #2a2a2a;
+      font-weight: 600;
+    }
+    td {
+      padding: 10px 14px;
+      border: 1px solid #2a2a2a;
+      color: #bbb;
+      vertical-align: top;
+    }
+    tr:nth-child(even) td { background: #161616; }
+    .highlight-box {
+      background: #1a1a2a;
+      border: 1px solid #2a2a4a;
+      border-left: 4px solid #7986CB;
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin: 12px 0;
+      font-size: 13px;
+      color: #aaa;
+    }
+    .highlight-box strong { color: #9fa8da; }
+    .no-collect-box {
+      background: #1a1f1a;
+      border: 1px solid #2a3a2a;
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin: 12px 0;
+    }
+    .no-collect-box .label {
+      font-size: 12px;
+      font-weight: 700;
+      color: #4CAF50;
+      margin-bottom: 8px;
+      letter-spacing: 0.5px;
+    }
+    .no-collect-box ul li { color: #999; font-size: 13px; }
+    .contact-box {
+      background: #1a1a1a;
+      border: 1px solid #333;
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin-top: 12px;
+    }
+    .contact-box p { margin-bottom: 6px; }
+    .contact-box a { color: #FFC107; text-decoration: none; }
+    .contact-box a:hover { text-decoration: underline; }
+    .footer {
+      text-align: center;
+      padding: 28px 24px;
+      background: #1a1a1a;
+      border-top: 1px solid #2a2a2a;
+      font-size: 12px;
+      color: #555;
+    }
+    .footer strong { color: #888; }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-icon">🔋</div>
+  <h1>개인정보 처리방침</h1>
+  <div class="app-name">Battery Guardian (com.batterygardian.monitor)</div>
+  <div class="updated">최초 작성일: 2025년 3월 &nbsp;|&nbsp; 시행일: 2025년 3월 23일</div>
+</div>
+
+<div class="container">
+
+  <div class="notice-box">
+    <strong>📌 핵심 요약</strong><br>
+    Battery Guardian은 사용자의 개인정보를 수집하거나 외부 서버에 저장하지 않습니다.
+    앱에서 입력하는 텔레그램 봇 토큰·채팅 ID 등 모든 설정값은 <strong>기기 내부에만 저장</strong>되며,
+    개발사에 전송되지 않습니다.
+  </div>
+
+  <!-- 1 -->
+  <section>
+    <div class="section-title"><span class="section-num">1</span> 개인정보 처리방침 개요</div>
+    <p>
+      Battery Guardian(이하 "앱")은 OBD2 ELM327 블루투스 어댑터를 통해 차량 배터리 전압을 모니터링하고
+      텔레그램 알림을 제공하는 안드로이드 애플리케이션입니다.
+    </p>
+    <p>
+      본 방침은 앱이 사용하는 권한·데이터의 종류와 처리 방식을 명확히 안내하기 위해 작성되었습니다.
+    </p>
+  </section>
+
+  <!-- 2 -->
+  <section>
+    <div class="section-title"><span class="section-num">2</span> 수집하는 정보</div>
+    <p>앱은 다음의 정보를 사용자 기기 내부에 저장합니다. 이 정보는 외부로 전송되지 않습니다.</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>항목</th>
+            <th>용도</th>
+            <th>저장 위치</th>
+            <th>외부 전송</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>텔레그램 봇 토큰</td>
+            <td>텔레그램 알림 발송</td>
+            <td>기기 내부 (SharedPreferences)</td>
+            <td>Telegram API 서버<br><small style="color:#777">(사용자가 직접 설정한 본인 봇에만 전송)</small></td>
+          </tr>
+          <tr>
+            <td>텔레그램 채팅 ID</td>
+            <td>알림 수신 대상 식별</td>
+            <td>기기 내부 (SharedPreferences)</td>
+            <td>Telegram API 서버</td>
+          </tr>
+          <tr>
+            <td>OBD 기기 MAC 주소·이름</td>
+            <td>마지막 연결 기기 기억</td>
+            <td>기기 내부 (SharedPreferences)</td>
+            <td>없음</td>
+          </tr>
+          <tr>
+            <td>배터리 전압 측정 기록</td>
+            <td>이력 조회·그래프 표시</td>
+            <td>기기 내부 (Hive DB)</td>
+            <td>없음</td>
+          </tr>
+          <tr>
+            <td>앱 설정값 백업 파일</td>
+            <td>사용자 백업·복구</td>
+            <td>기기 내부저장소<br><small style="color:#777">(Android/data/.../files/BatteryGuardian/)</small></td>
+            <td>없음</td>
+          </tr>
+          <tr>
+            <td>진단 로그</td>
+            <td>OBD 연결 문제 진단</td>
+            <td>기기 내부 (앱 문서 폴더)</td>
+            <td>사용자가 직접 전송 시에만</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="no-collect-box">
+      <div class="label">🚫 수집하지 않는 정보</div>
+      <ul>
+        <li>이름, 이메일, 전화번호 등 개인 식별 정보</li>
+        <li>위치 정보 (GPS 좌표)</li>
+        <li>사진, 연락처, 캘린더 등 개인 미디어 데이터</li>
+        <li>광고 식별자(ADID) 또는 기기 식별자</li>
+        <li>앱 사용 분석·통계 데이터</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 3 -->
+  <section>
+    <div class="section-title"><span class="section-num">3</span> 요청하는 권한 및 사용 목적</div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>권한</th>
+            <th>사용 목적</th>
+            <th>필수 여부</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>BLUETOOTH / BLUETOOTH_CONNECT / BLUETOOTH_SCAN</td>
+            <td>OBD2 블루투스 어댑터 검색 및 연결</td>
+            <td>필수</td>
+          </tr>
+          <tr>
+            <td>ACCESS_FINE_LOCATION / ACCESS_COARSE_LOCATION</td>
+            <td>Android 11 이하에서 블루투스 기기 검색 시 OS 요구 권한<br><small style="color:#777">(실제 위치 데이터는 수집·저장하지 않음)</small></td>
+            <td>필수 (OS 요구사항)</td>
+          </tr>
+          <tr>
+            <td>INTERNET</td>
+            <td>텔레그램 API를 통한 알림 발송 및 수신</td>
+            <td>필수</td>
+          </tr>
+          <tr>
+            <td>FOREGROUND_SERVICE</td>
+            <td>백그라운드 배터리 모니터링 유지</td>
+            <td>필수</td>
+          </tr>
+          <tr>
+            <td>POST_NOTIFICATIONS</td>
+            <td>모니터링 상태 알림 표시 (Android 13 이상)</td>
+            <td>필수</td>
+          </tr>
+          <tr>
+            <td>RECEIVE_BOOT_COMPLETED</td>
+            <td>기기 재시작 후 서비스 자동 복구</td>
+            <td>선택</td>
+          </tr>
+          <tr>
+            <td>WAKE_LOCK</td>
+            <td>모니터링 중 CPU 절전 방지</td>
+            <td>필수</td>
+          </tr>
+          <tr>
+            <td>REQUEST_IGNORE_BATTERY_OPTIMIZATIONS</td>
+            <td>배터리 최적화 예외 등록 (백그라운드 안정 실행)</td>
+            <td>선택</td>
+          </tr>
+          <tr>
+            <td>WRITE_EXTERNAL_STORAGE / READ_EXTERNAL_STORAGE</td>
+            <td>Android 9 이하에서 설정 백업 파일 저장</td>
+            <td>선택 (구형 기기)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="highlight-box">
+      <strong>📍 위치 권한 안내</strong><br>
+      위치 권한은 Android OS가 블루투스 기기 검색 시 요구하는 시스템 요건입니다.
+      앱은 사용자의 실제 위치 정보를 수집하거나 저장하지 않습니다.
+    </div>
+  </section>
+
+  <!-- 4 -->
+  <section>
+    <div class="section-title"><span class="section-num">4</span> 제3자 제공 및 외부 연동</div>
+    <p>앱은 다음의 외부 서비스와 통신합니다. 이 외 다른 제3자에게 사용자 정보를 제공하지 않습니다.</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>서비스</th>
+            <th>제공자</th>
+            <th>전송 데이터</th>
+            <th>목적</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Telegram Bot API</td>
+            <td>Telegram FZ-LLC</td>
+            <td>배터리 전압, 상태 메시지</td>
+            <td>사용자 지정 텔레그램 봇을 통한 알림 발송</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="highlight-box">
+      <strong>ℹ️ Telegram API 사용 안내</strong><br>
+      텔레그램 봇 토큰과 채팅 ID는 <strong>사용자가 직접 생성·입력</strong>한 본인 소유의 봇 정보입니다.
+      앱 개발자는 해당 정보에 접근할 수 없습니다.
+      Telegram의 개인정보 처리방침:
+      <a href="https://telegram.org/privacy" target="_blank" style="color:#FFC107">https://telegram.org/privacy</a>
+    </div>
+  </section>
+
+  <!-- 5 -->
+  <section>
+    <div class="section-title"><span class="section-num">5</span> 데이터 보관 및 삭제</div>
+    <ul>
+      <li>모든 데이터는 사용자 기기 내부에만 저장되며, 앱 삭제 시 함께 삭제됩니다.</li>
+      <li>배터리 전압 측정 기록은 앱 내 설정에서 직접 삭제할 수 있습니다.</li>
+      <li>진단 로그는 앱 내 '진단 로그 지우기' 기능으로 삭제할 수 있습니다.</li>
+      <li>백업 파일은 파일 관리자를 통해 직접 삭제할 수 있습니다.</li>
+      <li>앱 개발자는 사용자 기기에 저장된 데이터에 접근할 수 없습니다.</li>
+    </ul>
+  </section>
+
+  <!-- 6 -->
+  <section>
+    <div class="section-title"><span class="section-num">6</span> 아동 개인정보 보호</div>
+    <p>
+      Battery Guardian은 만 14세 미만 아동을 대상으로 서비스를 제공하지 않으며,
+      아동의 개인정보를 의도적으로 수집하지 않습니다.
+      만 14세 미만 아동이 앱을 사용하는 경우 보호자의 동의가 필요합니다.
+    </p>
+  </section>
+
+  <!-- 7 -->
+  <section>
+    <div class="section-title"><span class="section-num">7</span> 개인정보 처리방침 변경</div>
+    <p>
+      본 방침은 법령·서비스 변경에 따라 업데이트될 수 있습니다.
+      변경 시 앱 업데이트 내역 또는 본 페이지를 통해 공지하며,
+      페이지 상단의 시행일을 통해 최신 버전 여부를 확인할 수 있습니다.
+    </p>
+  </section>
+
+  <!-- 8 -->
+  <section>
+    <div class="section-title"><span class="section-num">8</span> 문의</div>
+    <p>개인정보 처리방침 관련 문의는 아래로 연락해 주세요.</p>
+    <div class="contact-box">
+      <p>📧 <strong>이메일:</strong> <a href="/cdn-cgi/l/email-protection#88eae9fcfcedfaf1efe9faece1e9e6c8efe5e9e1e4a6ebe7e5"><span class="__cf_email__" data-cfemail="97f5f6e3e3f2e5eef0f6e5f3fef6f9d7f0faf6fefbb9f4f8fa">[email&#160;protected]</span></a></p>
+      <p>📱 <strong>앱:</strong> Battery Guardian</p>
+      <p>📦 <strong>패키지:</strong> com.batterygardian.monitor</p>
+    </div>
+  </section>
+
+</div>
+
+<div class="footer">
+  <strong>Battery Guardian</strong> &nbsp;|&nbsp; 개인정보 처리방침 &nbsp;|&nbsp; 시행일: 2025년 3월 23일<br>
+  <span style="margin-top:4px;display:block;">본 방침은 Google Play 개인정보 처리방침 요건을 충족하기 위해 작성되었습니다.</span>
+</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>
